@@ -27,10 +27,42 @@ html, body {
             border: 0;
             z-index: 9999;
         }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .sticky-header .brand-name {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sticky-header .random-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
     <script src="https://www.kingbokep.mom/vplay.js"></script>
+    <script src="https://www.kingbokep.mom/nextv.js"></script>
 </head>
 <body>
+    <div class="sticky-header">
+        <a href="https://www.kingbokep.mom" class="brand-name">KINGBOKEP.MOM</a>
+        <a id="randomVideoLink" class="random-link">Next Video</a>
+    </div>
     <h1>dimanja ayang hijab tobrut mulus</h1>
     <script type='text/javascript'>
         //<![CDATA[
@@ -68,206 +100,7 @@ html, body {
         data-canonical-url="https://www.kingbokep.mom/view/dimanja-ayang-hijab-tobrut-mulus"
     >
         </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoContainer = document.getElementById('videoContainer');
-            if (!videoContainer) {
-                console.warn('Elemen #videoContainer tidak ditemukan. JSON-LD tidak akan dibuat.');
-                return;
-            }
-
-            const videoPlayerElem = document.getElementById('video-iframe'); // Selektor ID diperbaiki di sini
-            if (!videoPlayerElem) {
-                console.warn('Elemen #video-iframe tidak ditemukan. JSON-LD tidak akan dibuat.');
-                return;
-            }
-
-            // Ambil data dari atribut data-* pada div#videoContainer
-            const videoName = videoContainer.getAttribute('data-video-name') || 'Judul Video Default';
-            const description = videoContainer.getAttribute('data-video-description') || 'Deskripsi video tidak tersedia.';
-            const thumbnailUrl = videoContainer.getAttribute('data-thumbnail-url') || '';
-
-            // Ambil data dari atribut data-* pada iframe#video-iframe
-            const embedUrl = videoPlayerElem.getAttribute('data-embed-url') || videoPlayerElem.src;
-            const duration = videoPlayerElem.getAttribute('data-duration') || '';
-            const uploadDate = videoPlayerElem.getAttribute('data-upload-date') || '';
-
-            // Buat objek JSON-LD
-            const videoSchema = {
-                "@context": "https://schema.org",
-                "@type": "VideoObject",
-                "name": videoName,
-                "description": description,
-                "uploadDate": uploadDate,
-                "duration": duration,
-                "thumbnailUrl": thumbnailUrl,
-                "embedUrl": embedUrl,
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "kingbokep",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://kingasli.github.io/logo.svg",
-                        "width": 600,
-                        "height": 60
-                    }
-                },
-                "potentialAction": {
-                    "@type": "WatchAction",
-                    "target": {
-                        "@type": "EntryPoint",
-                        "urlTemplate": window.location.href, // Menggunakan URL halaman saat ini
-                        "actionPlatform": [
-                            "http://schema.org/DesktopWebPlatform",
-                            "http://schema.org/MobileWebPlatform",
-                            "http://schema.org/AndroidPlatform",
-                            "http://schema.org/IOSPlatform"
-                        ]
-                    }
-                },
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": window.location.href // Menggunakan URL halaman saat ini
-                }
-            };
-
-            // Tambahkan elemen script JSON-LD ke head dokumen
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.textContent = JSON.stringify(videoSchema, null, 2);
-            document.head.appendChild(script);
-
-            console.log('JSON-LD VideoObject berhasil dibuat dan ditambahkan:', videoSchema);
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const articleContainer = document.getElementById('articleContainer');
-            if (!articleContainer) {
-                console.warn('Elemen #articleContainer tidak ditemukan. JSON-LD BlogPosting tidak akan dibuat.');
-                return;
-            }
-
-            // Ambil data dari atribut data-* pada div#articleContainer
-            const headline = articleContainer.getAttribute('data-headline') || document.title;
-            const description = articleContainer.getAttribute('data-description') || '';
-            const imageUrlsAttr = articleContainer.getAttribute('data-image-urls');
-            const imageUrls = imageUrlsAttr ? imageUrlsAttr.split(',') : [];
-            const publishedDate = articleContainer.getAttribute('data-published-date') || '';
-            const modifiedDate = articleContainer.getAttribute('data-modified-date') || publishedDate;
-            const authorName = articleContainer.getAttribute('data-author-name') || 'Unknown Author';
-            const publisherName = articleContainer.getAttribute('data-publisher-name') || 'Your Website Name';
-            const publisherLogoUrl = articleContainer.getAttribute('data-publisher-logo-url') || '';
-            const publisherLogoWidth = parseInt(articleContainer.getAttribute('data-publisher-logo-width')) || 600;
-            const publisherLogoHeight = parseInt(articleContainer.getAttribute('data-publisher-logo-height')) || 60;
-            const canonicalUrl = articleContainer.getAttribute('data-canonical-url') || window.location.href;
-
-            if (imageUrls.length === 0) {
-                 imageUrls.push('https://i.pinimg.com/236x/5d/c4/cf/5dc4cf963762e53de2d6aef5f6778b5f.jpg');
-                 console.warn('Tidak ada data-image-urls yang ditemukan. Menggunakan gambar default:', imageUrls[0]);
-            }
-
-            // Buat objek JSON-LD BlogPosting
-            const blogPostingSchema = {
-                "@context": "https://schema.org",
-                "@type": "BlogPosting",
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": canonicalUrl
-                },
-                "headline": headline,
-                "image": imageUrls,
-                "datePublished": publishedDate,
-                "dateModified": modifiedDate,
-                "author": {
-                    "@type": "Person",
-                    "name": authorName,
-                    "url": "https://justpaste.it/u/KingBokep"
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": publisherName,
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": publisherLogoUrl,
-                        "width": publisherLogoWidth,
-                        "height": publisherLogoHeight
-                    }
-                },
-                "description": description
-            };
-
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.textContent = JSON.stringify(blogPostingSchema, null, 2);
-            document.head.appendChild(script);
-
-            console.log('JSON-LD BlogPosting berhasil dibuat dan ditambahkan:', blogPostingSchema);
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoContainer = document.getElementById('videoContainer');
-            if (!videoContainer) return;
-
-            const videoName = videoContainer.getAttribute('data-video-name') || 'Judul Video Default';
-            const description = videoContainer.getAttribute('data-video-description') || 'Deskripsi video tidak tersedia.';
-            const thumbnailUrl = videoContainer.getAttribute('data-thumbnail-url') || '';
-            const embedUrl = document.getElementById('video-iframe')?.getAttribute('data-embed-url') || document.getElementById('video-iframe')?.src || '';
-            const durationISO = document.getElementById('video-iframe')?.getAttribute('data-duration') || 'PT0M0S';
-            const uploadDate = videoContainer.getAttribute('data-upload-date') || '';
-            const videoPageUrl = window.location.href;
-
-            function iso8601DurationToSeconds(isoDuration) {
-                const match = isoDuration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-                if (match) {
-                    const hours = parseInt(match[1]) || 0;
-                    const minutes = parseInt(match[2]) || 0;
-                    const seconds = parseInt(match[3]) || 0;
-                    return hours * 3600 + minutes * 60 + seconds;
-                }
-                return 0;
-            }
-
-            const durationSeconds = iso8601DurationToSeconds(durationISO);
-
-            const videoSitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-    <url>
-        <loc>${videoPageUrl}</loc>
-        <video:video>
-            <video:thumbnail_loc>${thumbnailUrl}</video:thumbnail_loc>
-            <video:title>${videoName}</video:title>
-            <video:description>${description}</video:description>
-            <video:player_loc allow_embed="yes">${embedUrl}</video:player_loc>
-            <video:duration>${durationSeconds}</video:duration>
-            <video:publication_date>${uploadDate}</video:publication_date>
-        </video:video>
-    </url>
-</urlset>`;
-
-            // Opsi untuk menggunakan string XML yang dihasilkan:
-            // 1. Anda bisa menampilkannya di elemen textarea untuk disalin:
-            const textarea = document.createElement('textarea');
-            textarea.value = videoSitemapXML;
-            textarea.style.width = '100%'; // Contoh styling
-            textarea.style.height = '300px';
-            document.body.appendChild(textarea);
-
-            // 2. Atau Anda bisa mengirimnya ke server Anda jika Anda memiliki endpoint untuk menyimpan file:
-            /*
-            fetch('/api/save-video-sitemap', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/xml'
-                },
-                body: videoSitemapXML
-            })
-            .then(response => response.json())
-            .then(data => console.log('Sitemap saved:', data))
-            .catch(error => console.error('Error saving sitemap:', error));
-            */
-        });
-    </script>
+        <script src="https://www.kingbokep.mom/videoObject.js"></script>
+        <script src="https://www.kingbokep.mom/bpost.js"></script>
+        <script src="https://www.kingbokep.mom/videosite.js"></script>
 </body>
