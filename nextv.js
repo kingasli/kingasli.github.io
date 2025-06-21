@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-            // Ini adalah daftar tautan video acak Anda.
-            // SILAKAN UBAH DAN ISI DENGAN DAFTAR TAUTAN VIDEO ASLI ANDA.
             const videoLinks = [
                 "https://www.kingbokep.mom/",
                 "https://www.kingbokep.mom/view/dimanja-ayang-hijab-tobrut-mulus"
