@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "https://www.kingbokep.mom/view/jilbab-hitam-lagi-colmek-ketahuan-abang",
         "https://www.kingbokep.mom/view/chella-dini-cantik-tobrut-mulus-sange",
         "https://www.kingbokep.mom/view/chella-dini-colmek-dikamar-kasur-pink",
-        "https://www.kingbokep.mom/view/chella-dini-colmek-muncrat-muncrat"
+        "https://www.kingbokep.mom/view/chella-dini-colmek-muncrat-muncrat",
+        "https://www.kingbokep.mom/view/percakapan-ngewe-abis-makan",
+        "https://www.kingbokep.mom/view/dibolehin-crot-didalem-pacar-puas"
     ];
 
     const randomVideoLinkElement = document.getElementById('randomVideoLink');
