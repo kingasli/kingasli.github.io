@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const videoLinks = [
                 "https://www.kingbokep.mom/view/ukhti-baru-pertama-kali-ngewe",
                 "https://www.kingbokep.mom/view/dimanja-ayang-hijab-tobrut-mulus",
-                "https://www.kingbokep.mom/view/jilbab-hitam-lagi-colmek-ketahuan-abang"
+                "https://www.kingbokep.mom/view/jilbab-hitam-lagi-colmek-ketahuan-abang",
+                "https://www.kingbokep.mom/view/chella-dini-cantik-tobrut-mulus-sange"
             ];
 
             const randomVideoLinkElement = document.getElementById('randomVideoLink');
