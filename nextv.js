@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "https://www.kingbokep.mom/view/percakapan-ngewe-abis-makan",
         "https://www.kingbokep.mom/view/dibolehin-crot-didalem-pacar-puas",
         "https://www.kingbokep.mom/view/enaknya-punya-cewe-penurut-crotin-ayang",
-        "https://www.kingbokep.mom/view/talent-vavyvio-colmek-sempit"
+        "https://www.kingbokep.mom/view/talent-vavyvio-colmek-sempit",
+        "https://www.kingbokep.mom/view/abg-sma-omek-sampe-kejang"
     ];
 
     const randomVideoLinkElement = document.getElementById('randomVideoLink');
