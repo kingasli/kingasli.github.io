@@ -2,4 +2,3 @@ User-agent: *
 Disallow:
 Allow: /
 sitemap: https://www.kingbokep.mom/sitemap.xml
-sitemap: https://www.kingbokep.mom/video-sitemap.xml
